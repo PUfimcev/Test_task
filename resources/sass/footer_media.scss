@@ -1,0 +1,23 @@
+// Variables
+@import 'variables';
+
+@media screen and (min-width: 1024px){
+
+    footer{
+
+        .contacts{
+
+            ul{
+
+                .callback{
+
+                    a:hover{
+                        color: $hover-color2 !important;
+                        font-size: 2rem;
+                    }
+                }
+
+            }
+        }
+    }
+}

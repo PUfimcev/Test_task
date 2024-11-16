@@ -1,0 +1,81 @@
+// Variables
+@import 'variables';
+
+footer{
+
+    .contacts{
+
+        ul{
+
+            li:not(:nth-child(2)){
+                display: flex;
+            }
+
+            .sign_tel,  .sign_mail, .sign_addr{
+                display: block;
+                width: 1.5rem;
+                height: 1.5rem;
+                margin-right: 1rem;
+            }
+
+            .sign_tel{
+                background: url(../images/Frame_tel.png) center/contain no-repeat;
+            }
+
+            .sign_mail{
+                background: url(../images/Frame_mail.png) center/contain no-repeat;
+            }
+
+            .sign_addr{
+                background: url(../images/Frame_pos.png) center/contain no-repeat;
+            }
+
+            .callback{
+                a{
+                    color: $reffer-color !important;
+                }
+            }
+
+        }
+    }
+
+    .services {
+        .footer__refrance{
+            width: 100%;
+
+            .refrance{
+                display: block;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                width: 100% !important;
+
+                color: $reffer-color !important;
+
+                span{
+                    display: inline-block;
+                }
+
+                &:first-child{
+                    width: 90%;
+                }
+
+                .arrow_right{
+                    width: 1.25rem;
+                    height: 1.25rem;
+                    background: url(../images/arrow_right.png) center/contain no-repeat;
+                }
+            }
+        }
+    }
+
+    .footer__bottom{
+
+        ul{
+            width: 16rem;
+
+        }
+    }
+
+
+}

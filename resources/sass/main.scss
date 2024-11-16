@@ -1,0 +1,50 @@
+// Variables
+@import 'variables';
+
+main{
+
+    .top__section{
+
+        padding: 7.5rem 0;
+        width: 100%;
+        // min-height: 47rem;
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .list__companies{
+            width: 55%;
+
+            .title{
+                margin-left: 1.1rem;
+            }
+
+            .list__couriers{
+                width: 100%;
+
+                li{
+                    width: 30%;
+
+                    .courier_img{
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        .top__picture{
+            width: 40%;
+
+            .picture{
+                width: 100%;
+                object-fit: cover;
+            }
+
+        }
+    }
+
+
+}
