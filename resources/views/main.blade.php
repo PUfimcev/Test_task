@@ -35,41 +35,50 @@
                 <p>Оставьте заявку и наш менеджер свяжется с вами для консультации</p>
 
                 <div class="card-application">
-                    <form method="POST" action="{{ route('store_applicant') }}">
+                    <form method="POST" onkeydown="stopKeyEnter(event)" action="{{ route('store_applicant') }}">
                         @csrf
                         <div class="names mb-1">
                             <div class="name name_input">
-                                <input id="name" type="text" class="form_control" name="name" value="{{ old('name') }}"  autocomplete="name" maxlength="256" autofocus placeholder="Имя *">
+                                <input id="name" type="text" class="form_control" name="name" value="{{ old('name') }}"  autocomplete="name" maxlength="256"  placeholder="Имя *">
                                 <div class="form-error name-error">
                                     <span>Поле обязательно для заполнения</span>
                                 </div>
                             </div>
                             <div class="name last_name_input">
-                                <input id="last_name_input" type="text" class="form_control" name="last_name" value="{{ old('last_name') }}"  autocomplete="last_name" maxlength="256" autofocus placeholder="Фамилия *">
+                                <input id="last_name_input" type="text" class="form_control" name="last_name" value="{{ old('last_name') }}"  autocomplete="last_name" maxlength="256" placeholder="Фамилия *">
                                 <div class="form-error last_name-error">
                                     <span>Поле обязательно для заполнения</span>
                                 </div>
                             </div>
                             <div class="name patronymic_input">
-                                <input id="patronymic" type="text" class="form_control" name="patronymic" value="{{ old('patronymic') }}"  autocomplete="patronymic" maxlength="256" autofocus placeholder="Отчество">
+                                <input id="patronymic" type="text" class="form_control" name="patronymic" value="{{ old('patronymic') }}"  autocomplete="patronymic" maxlength="256"  placeholder="Отчество">
                             </div>
                         </div>
 
                         <div class="birthdate_input">
                             <div class="birthdate_title">Дата рождения *</div>
 
-                            <input id="birthdate" type="text" class="form_control" name="birth_date" value="{{ old('birth_date') }}" placeholder="__.__.____">
+                            <div>
+
+                                <input id="birthdate" type="text" class="form_control" name="birth_date" value="{{ old('birth_date') }}" placeholder="__.__.____">
+                                <div class="form-error name-error">
+                                    <span>Поле обязательно для заполнения</span>
+                                </div>
+                            </div>
 
                         </div>
 
                         <div class="email_input">
-                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus placeholder="Email">
-                            <div class="form-error email-error">
-                                <span>Не верно введен адрес эл.почты</span>
-                            </div>
+                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"  autocomplete="email" placeholder="Email">
+
                             <div class="form-error email-absence-error">
                                 <span>Напишите email или номер телефона</span>
                             </div>
+
+                            <div class="form-error email-error">
+                                <span>Не верно введен адрес эл.почты</span>
+                            </div>
+
                         </div>
 
                         <div class="phone_input">
@@ -86,7 +95,7 @@
                                         <option value="+7" @selected(old('tel_code') == "+7") >+7</option>
                                     </select>
                                     <div class="phone_number">
-                                        <input id="phone" type="tel" class="form_control" name="tel" value="{{ old('tel') }}"  autocomplete="email" autofocus placeholder="(__)___-__-__">
+                                        <input id="phone" type="tel" class="form_control" name="tel" value="{{ old('tel') }}"  autocomplete="email"  placeholder="(__)___-__-__">
 
                                         <div class="form-error email-absence-error">
                                             <span>Напишите email или номер телефона</span>
@@ -127,7 +136,7 @@
                                     <a href="#" class="ref_for_rules text-decoration-none" target="_blank">Я прочитал правила</a></label>
                             </div>
 
-                            <button type="submit" class="form_btn" >Отправить</button>
+                            <button class="form_btn" >Отправить</button>
 
                         </div>
 
@@ -139,5 +148,15 @@
     </section>
 </main>
 
+@push('scripts')
+
+    <script>
+        function stopKeyEnter(event){
+            if(!event) return;
+            if(event.key === 'Enter') event.preventDefault();
+        }
+    </script>
+
+@endpush
 
 @endsection

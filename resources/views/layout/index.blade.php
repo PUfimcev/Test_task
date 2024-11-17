@@ -32,6 +32,8 @@
 
         {{-- Footer --}}
         @includeIf('layout.footer')
+
+        @stack('scripts')
     </body>
 
 </html>
