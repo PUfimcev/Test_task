@@ -5,6 +5,14 @@ footer{
 
     .contacts{
 
+        &>a{
+
+            img{
+
+                width: 70%;
+            }
+        }
+
         ul{
 
             li:not(:nth-child(2)){

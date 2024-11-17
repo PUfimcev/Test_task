@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('last_name', length: 256);
             $table->string('patronymic', length: 256)->nullable();
             $table->date('birth_date');
-            $table->string('email')->unique();
-            $table->char('tel_code', length: 7);
-            $table->string('tel');
-            $table->string('status');
-            $table->string('about', length: 10001);
+            $table->string('email')->nullable();
+            $table->char('tel_code', length: 7)->nullable();
+            $table->string('tel')->nullable();
+            $table->string('status')->nullable();
+            $table->string('about', length: 10001)->nullable();
             $table->timestamps();
         });
 

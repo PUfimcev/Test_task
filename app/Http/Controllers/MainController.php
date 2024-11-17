@@ -23,11 +23,10 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
 
        User::create($request->all());
 
-            // return to_route('index')->with('status', 'Thank you very much!');
+        return to_route('index')->with('status', 'Спасибо за заявку. Мы свяжемся с Вами в ближайшее время!');
     }
 
 }

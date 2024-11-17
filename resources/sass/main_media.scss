@@ -10,14 +10,67 @@
     }
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 1200px){
     a{
         font-size: 1rem !important;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    a{
 
         &:hover{
             color: $hover-color !important;
             font-weight: 900;
         }
+    }
+
+        // Form
+
+    .bottom__section{
+
+
+            .container{
+
+                .form{
+
+                    .card-application{
+
+                        .dispatch__form{
+
+
+                            .form_checkbox{
+
+                                label{
+
+                                    &:hover{
+                                        cursor: pointer;
+                                        background: url(../images/check_square_hover.png) center/cover no-repeat;
+                                    }
+                                }
+
+                                .ref_for_rules {
+                                    &:hover{
+                                        color: rgb(155, 155, 245) !important;
+                                    }
+                                }
+                            }
+
+                            .form_btn{
+
+                                &:not(:disabled):hover{
+
+                                    background-color: $btn-color-hover !important;
+                                }
+                            }
+
+                        }
+
+                    }
+
+                }
+            }
+
     }
 
 }
@@ -51,6 +104,88 @@
             }
         }
 
+        .form{
+            margin: 0 auto;
+
+            .birthdate_input{
+
+                .birthdate_title{
+                    font-size: 0.9rem !important;
+                }
+            }
+
+            .phone_input{
+
+                .status-title{
+
+                    &:first-child{
+                        font-size: 0.9rem !important;
+                    }
+                }
+
+                .phone_data{
+                    &>div{
+                        #tel_code{
+                            font-size: 0.9rem !important;
+                        }
+
+                        .phone_number{
+
+                            #phone{
+                                font-size: 0.9rem !important;
+                            }
+
+                        }
+
+                    }
+                }
+            }
+
+            .status{
+
+                .status-title{
+
+                    &:first-child{
+                        font-size: 0.9rem !important;
+                    }
+                }
+                .status_data{
+
+                    #status{
+                        font-size: 0.9rem !important;
+                    }
+                }
+            }
+
+            .about{
+
+                #textarea_about{
+
+                    &::placeholder{
+
+                        font-size: 0.9rem !important;
+                    }
+                }
+            }
+
+            .dispatch__form{
+                .form_btn{
+                    font-size: 0.9rem !important;
+
+                }
+            }
+
+            input{
+                font-size: 0.9rem !important;
+
+                &::placeholder{
+
+                    font-size: 0.9rem !important;
+                }
+
+            }
+        }
+
     }
 }
 
@@ -72,5 +207,34 @@
             }
         }
 
+        .form{
+            .names{
+                flex-direction: column;
+                gap: 1.5rem;
+
+
+                .name{
+                    width: 100% !important;
+                }
+            }
+
+            .birthdate_input{
+                justify-content: space-between;
+
+                #birthdate{
+                    width: 50% !important;
+                }
+            }
+
+            .dispatch__form{
+
+                flex-direction: column;
+
+                .form_checkbox{
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+        }
     }
 }

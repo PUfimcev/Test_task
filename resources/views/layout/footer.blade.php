@@ -5,7 +5,7 @@
             <a class="navbar-brand d-block mb-5" href="{{ route('index') }}"><img src="{{ asset('storage/images/Vector.png') }}" alt="Logo"></a>
           <ul class="nav flex-column">
             <li class="nav-item mb-2"><span class="sign_tel"></span><a href="#" class="nav-link p-0 text-body-secondary">+48690590089</a></li>
-            <li class="callback nav-item mb-2"><a href="#" class="nav-link p-0 text-decoration-underline">Заказать звонок</a></li>
+            <li class="callback nav-item mb-2"><a href="#" class="p-0 text-decoration-underline">Заказать звонок</a></li>
             <li class="nav-item mb-2"><span class="sign_mail"></span><a href="mailto:info@enemer.pl" class="nav-link p-0 text-body-secondary" >info@enemer.pl</a></li>
             <li class="nav-item mb-2"><span class="sign_addr"></span><a href="#" class="nav-link p-0 text-body-secondary flex-fill">Błonie, Pass 20I, budynek 15, 05-870</a></li>
           </ul>

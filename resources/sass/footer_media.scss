@@ -11,12 +11,61 @@
 
                 .callback{
 
-                    a:hover{
-                        color: $hover-color2 !important;
-                        font-size: 2rem;
+                    a{
+                        &:hover{
+
+                            color: $hover-color!important;
+                        }
+
                     }
                 }
 
+            }
+        }
+        .services {
+            .footer__refrance{
+
+                .refrance{
+
+                    &:hover{
+
+                        color: $hover-color!important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px){
+
+    footer{
+
+        .contacts{
+
+            &>a{
+
+                img{
+
+                    width: 65% !important;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px){
+
+    footer{
+
+        .contacts{
+
+            &>a{
+
+                img{
+
+                    width: 50% !important;
+                }
             }
         }
     }

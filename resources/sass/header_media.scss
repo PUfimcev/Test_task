@@ -1,0 +1,16 @@
+@import 'variables';
+
+@media screen and (max-width: 1200px){
+    header{
+
+        .navbar{
+            .navbar-brand{
+                width: 18%;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}

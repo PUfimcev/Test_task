@@ -7,7 +7,6 @@ main{
 
         padding: 7.5rem 0;
         width: 100%;
-        // min-height: 47rem;
 
         display: flex;
         flex-wrap: wrap;
@@ -44,6 +43,318 @@ main{
             }
 
         }
+    }
+
+
+
+    // Form
+
+    .bottom__section{
+
+        background: url(../images/Frame_main.png) center/cover no-repeat;
+
+        .container{
+
+            display: flex;
+            align-items: center;
+            padding: 2rem 0;
+
+            .form{
+                width: clamp(20rem, 90%, 40rem);
+
+
+                padding: 2rem;
+
+                background-color: rgba(39,47,51, 0.7);
+
+                color: $body-bg;
+
+                .card-application{
+
+                    .form-error{
+                        display: none;
+                        color: $error-color;
+                        background-color: $body-bg;
+                        padding: 0.1rem;
+                        margin-top: 0.1rem;
+                        width: 100%;
+                        border: 2px solid $error-color;
+                        text-align: center;
+                        font-size: 0.7rem;
+                    }
+
+
+                    .title-plus, .title-minus{
+                        cursor: pointer;
+                    }
+
+                    .title-minus{
+                        display: none;
+                    }
+
+                    // Names input
+
+                    .names{
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 1.5rem !important;
+
+
+                        .name{
+                            width: 31%;
+                            border-bottom: 1px solid $body-bg;
+
+                            input{
+                                width: 100%;
+                                background-color: rgba(39,47,51, 0);
+                                border: none;
+                                color: $body-bg;
+                                font-size: 1rem !important;
+                                outline: 0;
+
+                                &::placeholder{
+
+                                    color: $body-bg;
+                                }
+                            }
+                        }
+                    }
+
+                    // Birthday input
+                    .birthdate_input{
+                        margin-bottom: 1.5rem !important;
+                        border-bottom: 1px solid $body-bg;
+                        display: flex;
+                        align-items: center;
+
+                        .birthdate_title{
+                            margin-right: 1rem;
+                            font-size: 1rem;
+                        }
+
+                        #birthdate{
+                            background-color: rgba(39,47,51, 0);
+                            border: none;
+                            color: $body-bg;
+                            font-size: 1rem !important;
+                            outline: 0;
+
+                            &::placeholder{
+
+                                color: $body-bg;
+                            }
+
+                        }
+
+                    }
+
+
+                    // email
+                    .email_input{
+                        margin-bottom: 1rem !important;
+                        border-bottom: 1.5px solid $body-bg;
+
+                        #email{
+                            width: 100%;
+                            background-color: rgba(39,47,51, 0);
+                            border: none;
+                            outline: 0 !important;
+                            box-shadow: none;
+                            color: $body-bg;
+                            font-size: 1rem !important;
+                            padding-left: 0;
+
+                            &::placeholder{
+
+                                color: $body-bg;
+                            }
+                        }
+                    }
+
+
+                    // Phone input
+                    .phone_input{
+                        margin-bottom: 1rem !important;
+                        border-bottom: 1.5px solid $body-bg;
+
+
+                        .status-title{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 0.5rem;
+
+                            &:first-child{
+                                font-size: 1rem;
+                            }
+                        }
+
+                        .phone_data{
+                            display: none;
+                            width: 100%;
+                            margin-bottom: 0.5rem;
+
+                            &>div{
+                                width: 100%;
+                                display: flex;
+                                justify-content:flex-start;
+                                align-items: center;
+
+                                #tel_code{
+                                    width: max(12%, 4rem);
+                                    background-color: rgba(39,47,51, 0);
+                                    border: none;
+                                    outline: 0 !important;
+                                    box-shadow: none;
+                                    color: $body-bg;
+                                    font-size: 1rem;
+                                    margin-right: 1rem;
+                                }
+
+                                .phone_number{
+
+                                    #phone{
+                                        width: 100%;
+                                        background-color: rgba(39,47,51, 0);
+                                        border: none;
+                                        outline: 0 !important;
+                                        box-shadow: none;
+                                        color: $body-bg;
+                                        font-size: 1rem;
+
+                                        &::placeholder{
+
+                                            color: $body-bg;
+                                        }
+                                    }
+
+                                }
+
+                            }
+                        }
+                    }
+
+                    // Status input
+                    .status{
+                        margin-bottom: 1rem !important;
+                        border-bottom: 1.5px solid $body-bg;
+
+                        .status-title{
+                            display: flex;
+                            justify-content: space-between;
+                            align-items: center;
+                            margin-bottom: 0.5rem;
+
+                            &:first-child{
+                                font-size: 1rem;
+                            }
+                        }
+
+                        .status_data{
+                            display: none;
+                            width: 100%;
+                            margin-bottom: 0.5rem;
+
+                            #status{
+                                width: 100%;
+                                background-color: rgba(39,47,51, 0);
+                                border: none;
+                                outline: 0 !important;
+                                box-shadow: none;
+                                color: $body-bg;
+                                font-size: 1rem;
+                                margin-right: 1rem;
+                            }
+                        }
+
+                    }
+
+                    // textarea
+                    .about{
+
+                        margin-bottom: 1.5rem !important;
+                        border-bottom: 1px solid $body-bg;
+
+                        #textarea_about{
+                            resize: vertical;
+                            min-height: $minLimitTextarea;
+                            max-height: $maxLimitTextarea;
+
+                            width: 100%;
+                            background-color: rgba(39,47,51, 0);
+                            border: none;
+                            outline: 0 !important;
+                            box-shadow: none;
+                            color: $body-bg;
+                            margin-right: 1rem;
+
+                            &::placeholder{
+
+                                color: $body-bg;
+                                font-size: 1rem;
+
+                            }
+                        }
+                    }
+
+
+                    // button and checkbox
+                    .dispatch__form{
+                        width: 100%;
+
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+
+                        .form_checkbox{
+                            display: flex;
+                            align-items: center;
+
+                            .checkbox_input{
+
+                                display: none;
+                                &:checked + label{
+                                    background: url(../images/check_square_checked.png) center/cover no-repeat;
+                                }
+                            }
+
+                            label{
+                                display: inline-block;
+                                width: 1rem;
+                                height: 1rem;
+                                background: url(../images/check_square.png) center/cover no-repeat;
+
+                            }
+
+                            .ref_for_rules{
+                                color: $body-bg !important;
+                                margin-left: 0.8rem;
+
+                            }
+
+                        }
+
+                        .form_btn{
+                            background-color: $btn-color !important;
+                            color:$body-bg;
+                            font-size: 1rem;
+                            padding: 0.75rem 2.5rem;
+                            border: none;
+                        }
+
+                        .form_btn:disabled{
+                            opacity: 0.6;
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+
     }
 
 

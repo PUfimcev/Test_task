@@ -38,58 +38,100 @@
                     <form method="POST" action="{{ route('store_applicant') }}">
                         @csrf
                         <div class="names mb-1">
-                            <div class="name_input">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"  autocomplete="name" autofocus placeholder="Имя">
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="name name_input">
+                                <input id="name" type="text" class="form_control" name="name" value="{{ old('name') }}"  autocomplete="name" maxlength="256" autofocus placeholder="Имя *">
+                                <div class="form-error name-error">
+                                    <span>Поле обязательно для заполнения</span>
+                                </div>
                             </div>
-                            <div class="surname_input">
-                                <input id="surname_input" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}"  autocomplete="last_name" autofocus placeholder="Фамилия">
-                                @error('last_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="name last_name_input">
+                                <input id="last_name_input" type="text" class="form_control" name="last_name" value="{{ old('last_name') }}"  autocomplete="last_name" maxlength="256" autofocus placeholder="Фамилия *">
+                                <div class="form-error last_name-error">
+                                    <span>Поле обязательно для заполнения</span>
+                                </div>
                             </div>
-                            {{-- <div class="name_input">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus placeholder="{{ __('Email Address') }}">
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                            <div class="name patronymic_input">
+                                <input id="patronymic" type="text" class="form_control" name="patronymic" value="{{ old('patronymic') }}"  autocomplete="patronymic" maxlength="256" autofocus placeholder="Отчество">
                             </div>
-                        </div> --}}
-                        {{-- <div class="login__password mb-3">
-                            <label for="password" class="col-form-label text-md-end">{{ __('Password') }}</label>
-                            <div class="password_input d-flex flex-column justify-content-between align-items-center">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="current-password" placeholder="{{ __('Password') }}">
-                                <div class="password-control"></div>
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div> --}}
+                        </div>
 
-                        <div class="row mb-2">
-                            <div class="login__remember_me">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                    <label class="form-check-label" for="remember"><a href="#" class="text-decoration-none" target="_blank" rel="noopener noreferrer">Я прочитал правила</a></label>
+                        <div class="birthdate_input">
+                            <div class="birthdate_title">Дата рождения *</div>
+
+                            <input id="birthdate" type="text" class="form_control" name="birth_date" value="{{ old('birth_date') }}" placeholder="__.__.____">
+
+                        </div>
+
+                        <div class="email_input">
+                            <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}"  autocomplete="email" autofocus placeholder="Email">
+                            <div class="form-error email-error">
+                                <span>Не верно введен адрес эл.почты</span>
+                            </div>
+                            <div class="form-error email-absence-error">
+                                <span>Напишите email или номер телефона</span>
+                            </div>
+                        </div>
+
+                        <div class="phone_input">
+                            <div class="status-title">
+                                <span>Телефон</span>
+                                <span class="title-plus">+</span>
+                                <span class="title-minus">-</span>
+                            </div>
+                            <div class="phone_data">
+                                <div>
+                                    <select id="tel_code" class="tel_code" size="1" name="tel_code">
+                                        <option value="" disabled selected>Код</option>
+                                        <option value="+375" @selected(old('tel_code') == "+375")>+375</option>
+                                        <option value="+7" @selected(old('tel_code') == "+7") >+7</option>
+                                    </select>
+                                    <div class="phone_number">
+                                        <input id="phone" type="tel" class="form_control" name="tel" value="{{ old('tel') }}"  autocomplete="email" autofocus placeholder="(__)___-__-__">
+
+                                        <div class="form-error email-absence-error">
+                                            <span>Напишите email или номер телефона</span>
+                                        </div>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="row mt-3 mb-0">
-                            <div class="login__button">
-                                <button type="submit" class="btn">Отправить</button>
+
+                        <div class="status mb-3">
+                            <div class="status-title">
+                                <span>Семейное положение</span>
+                                <span class="title-plus">+</span>
+                                <span class="title-minus">-</span>
+                            </div>
+                            <div class="status_data">
+
+                                <select id="status" class="form_select" size="1" name="status">
+                                        <option value="" disabled selected >Выберите</option>
+                                        <option value="Холост/не замужем" @selected(old('status') == "Холост/не замужем")>Холост/не замужем</option>
+                                        <option value="Женат/замужем" @selected(old('status') == "Женат/замужем") >Женат/замужем</option>
+                                        <option value="В разводе" @selected(old('status') == "В разводе") >В разводе</option>
+                                        <option value="Вдовец/вдова" @selected(old('status') == "Вдовец/вдова") >Вдовец/вдова</option>
+                                </select>
                             </div>
                         </div>
+                        <div class="about mb-3">
+                            <textarea name="about" id="textarea_about" rows="1" maxlength="1000"  placeholder="О себе"></textarea>
+                        </div>
+
+                        <div class="dispatch__form">
+
+                            <div class="form_checkbox">
+                                    <input class="checkbox_input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                    <label for="remember"></label>
+                                    <a href="#" class="ref_for_rules text-decoration-none" target="_blank">Я прочитал правила</a></label>
+                            </div>
+
+                            <button type="submit" class="form_btn" >Отправить</button>
+
+                        </div>
+
+
                     </form>
                 </div>
             </div>

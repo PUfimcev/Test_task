@@ -6,8 +6,8 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse justify-content-between ms-5" id="navbarNavDropdown">
-                <ul class="navbar-nav col-md-7 justify-content-around">
+            <div class="collapse navbar-collapse justify-content-between ms-4" id="navbarNavDropdown">
+                <ul class="navbar-nav gap-2 justify-content-around">
                     <li class="nav-item">
                     <a class="nav-link" href="#">О нас</a>
                     </li>

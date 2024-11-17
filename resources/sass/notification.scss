@@ -1,0 +1,29 @@
+@import 'variables';
+
+// Notifications
+
+#notifications {
+    width: min(100%, 25rem);
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    transition: top 1s ease-out 0s;
+    background-color: $body-bg;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border: 2px solid $hover-color;
+    border-radius: 5px;
+
+    .note{
+        color: $hover-color !important;
+        text-align: center;
+        padding: 2rem;
+        border: none;
+        background-color: $body-bg;
+    }
+
+}
