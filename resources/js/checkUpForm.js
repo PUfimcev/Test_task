@@ -48,23 +48,31 @@ class CheckUpForm{
 
     disableForm(){
 
-        if(this.#birthDate.value.length == 0 && this.#lastName.value.length == 0 && this.#name.value.length == 0) {
-            document.querySelectorAll('.form-error').forEach((elem) => {
-                elem.style = 'display: none';
-            });
-
-        }
+        document.querySelectorAll('.form-error').forEach((elem) => {
+            elem.classList.remove('show');
+        });
     }
 
     checkName(){
         this.#name.addEventListener('input', (e)=>{
-            (e.target.value.length > 0) && (e.target.nextElementSibling.style = 'display: none');
+            if(e.target.value.length >0) {
+                e.target.nextElementSibling.classList.remove('show');
+                e.target.nextElementSibling.innerHTML = '';
+            };
 
             if(e.target.value.length == 0){
-                this.#name.nextElementSibling.style = 'display: block';
+                e.target.nextElementSibling.classList.remove('show');
+                e.target.nextElementSibling.innerHTML = '';
                 this.disableCheckbox();
                 this.disableForm();
             }
+        })
+
+        this.#name.addEventListener('focus', (e)=>{
+            e.target.nextElementSibling.classList.remove('show');
+            this.disableCheckbox();
+            this.disableForm();
+
         })
 
         return (this.#name.value.length > 0) ? true : false;
@@ -72,13 +80,24 @@ class CheckUpForm{
 
     checkLastName(){
         this.#lastName.addEventListener('input', (e)=>{
-            (e.target.value.length >0) && (e.target.nextElementSibling.style = 'display: none');
+            if(e.target.value.length >0) {
+                e.target.nextElementSibling.classList.remove('show');
+                e.target.nextElementSibling.innerHTML = '';
+            };
 
             if(e.target.value.length == 0){
-                this.#lastName.nextElementSibling.style = 'display: block';
+                e.target.nextElementSibling.classList.remove('show');
+                e.target.nextElementSibling.innerHTML = '';
                 this.disableCheckbox();
                 this.disableForm();
             }
+        })
+
+        this.#lastName.addEventListener('focus', (e)=>{
+            e.target.nextElementSibling.classList.remove('show');
+            e.target.nextElementSibling.innerHTML = '';
+            this.disableCheckbox();
+            this.disableForm();
         })
 
         return (this.#lastName.value.length > 0) ? true : false;
@@ -86,13 +105,25 @@ class CheckUpForm{
 
     checkBirthDate(){
         this.#birthDate.addEventListener('input', (e)=>{
-            (e.target.value.length >0) && (e.target.nextElementSibling.style = 'display: none');
+            if(e.target.value.length >0) {
+                e.target.nextElementSibling.classList.remove('show');
+                e.target.nextElementSibling.innerHTML = '';
+            };
 
             if(e.target.value.length == 0){
-                this.#birthDate.nextElementSibling.style = 'display: block';
+                e.target.nextElementSibling.classList.remove('show');
+                e.target.nextElementSibling.innerHTML = '';
                 this.disableCheckbox();
                 this.disableForm();
             }
+        })
+
+        this.#birthDate.addEventListener('focus', (e)=>{
+            e.target.nextElementSibling.classList.remove('show');
+            e.target.nextElementSibling.innerHTML = '';
+            this.disableCheckbox();
+            this.disableForm();
+
         })
 
         return (this.#birthDate.value.length > 0 && this.#birthDate.value.length == 10) ? true : false;
@@ -101,20 +132,28 @@ class CheckUpForm{
     checkEmail(){
         this.#email.addEventListener('input', (e)=>{
             if(e.target.value.length >0) {
-                e.target.nextElementSibling.style = 'display: none';
-                this.#phone.nextElementSibling.style = 'display: none';
+                e.target.nextElementSibling.classList.remove('show');
+                e.target.nextElementSibling.innerHTML = '';
             };
 
             if(e.target.value.length == 0 && this.#phone.value.length > 0){
-                e.target.nextElementSibling.style = 'display: none';
-                this.#phone.nextElementSibling.style = 'display: none';
+                e.target.nextElementSibling.classList.remove('show');
+                e.target.nextElementSibling.innerHTML = '';
             }
 
             if(e.target.value.length == 0 && this.#phone.value.length == 0){
-                e.target.nextElementSibling.style = 'display: block';
-                this.#phone.nextElementSibling.style = 'display: block';
+                e.target.nextElementSibling.innerHTML = '<span>Напишите email или номер телефона</span>';
+                e.target.nextElementSibling.classList.remove('show');
                 this.disableCheckbox();
+                this.disableForm();
             }
+        })
+
+        this.#email.addEventListener('focus', (e)=>{
+            e.target.nextElementSibling.classList.remove('show');
+            this.disableCheckbox();
+            this.disableForm();
+
         })
 
         return (this.#email.value.length > 0) ? true : false;
@@ -123,31 +162,56 @@ class CheckUpForm{
     checkPhone(){
         this.#phone.addEventListener('input', (e)=>{
             if(e.target.value.length >0) {
-                e.target.nextElementSibling.style = 'display: none';
-                this.#email.nextElementSibling.style = 'display: none';
+                this.#email.nextElementSibling.classList.remove('show');
+                this.#email.nextElementSibling.innerHTML = '';
             };
 
             if(e.target.value.length == 0 && this.#email.value.length > 0){
-                e.target.nextElementSibling.style = 'display: none';
-                this.#email.nextElementSibling.style = 'display: none';
+                this.#email.nextElementSibling.classList.remove('show');
+                this.#email.nextElementSibling.innerHTML = '';
             }
 
             if(e.target.value.length == 0 && this.#email.value.length == 0){
-                e.target.nextElementSibling.style = 'display: block';
-                this.#email.nextElementSibling.style = 'display: block';
+                this.#email.nextElementSibling.innerHTML = '<span>Напишите email или номер телефона</span>';
+                this.#email.nextElementSibling.classList.remove('show');
                 this.disableCheckbox();
+                this.disableForm();
             }
+        })
+
+        this.#phone.addEventListener('focus', ()=>{
+            this.#email.nextElementSibling.classList.remove('show');
+            this.disableCheckbox();
+            this.disableForm();
+
         })
 
         return (this.#phone.value.length > 0 && this.#phone.value.length == 13) ? true : false;
     }
 
     checkCorrectInputEmail(){
-        this.#email.addEventListener('input', (e)=>{
-            document.querySelector('.form-error.email-error').style = 'display: none';
-        })
 
-        return false;
+
+        this.#email.addEventListener('change', (e)=>{
+
+            let validationResult = null;
+
+            if(e.target.value.length > 0) validationResult = this.validateEmail(e.target.value);
+
+            if(!validationResult) {
+                e.target.nextElementSibling.innerHTML = '<span>Не верно введен адрес эл.почты</span>';
+                e.target.nextElementSibling.classList.add('show');
+            }
+        })
+    }
+
+    validateEmail(data = ''){
+        if(!data) return;
+
+        const EMAIL_REGEXP = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
+
+        return EMAIL_REGEXP.test(data);
+
     }
 
 
@@ -164,32 +228,30 @@ class CheckUpForm{
         this.#checkboxElem.addEventListener('change', (e)=>{
 
             if(!this.checkName()) {
-                this.#name.nextElementSibling.style = 'display: block';
+                this.#name.nextElementSibling.innerHTML = '<span>Поле обязательно для заполнения</span>';
+                this.#name.nextElementSibling.classList.add('show');
                 this.disableCheckbox();
             }
 
             if(!this.checkLastName()) {
-                this.#lastName.nextElementSibling.style = 'display: block';
+                this.#lastName.nextElementSibling.innerHTML = '<span>Поле обязательно для заполнения</span>';
+                this.#lastName.nextElementSibling.classList.add('show');
                 this.disableCheckbox();
             }
 
             if(!this.checkBirthDate()) {
-                this.#birthDate.nextElementSibling.style = 'display: block';
+                this.#birthDate.nextElementSibling.innerHTML = '<span>Поле обязательно для заполнения</span>';
+                this.#birthDate.nextElementSibling.classList.add('show');
                 this.disableCheckbox();
             }
 
             if(!this.checkEmail() && !this.checkPhone()) {
-                this.#email.nextElementSibling.style = 'display: block';
-                this.#phone.nextElementSibling.style = 'display: block';
+                this.#email.nextElementSibling.innerHTML = '<span>Напишите email или номер телефона</span>';
+                this.#email.nextElementSibling.classList.add('show');
                 this.disableCheckbox();
             } else {
-                this.#email.nextElementSibling.style = 'display: none';
-                this.#phone.nextElementSibling.style = 'display: none';
-            }
-
-            if(!this.checkCorrectInputEmail()){
-                document.querySelector('.form-error.email-error').style = 'display: block';
-                this.disableCheckbox();
+                this.#email.nextElementSibling.classList.remove('show');
+                this.#email.nextElementSibling.innerHTML = '';
             }
 
             (e.currentTarget.checked) ? this.enableButton() : this.disableButton();

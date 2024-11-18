@@ -71,25 +71,31 @@ main{
 
                 .card-application{
 
-                    .form-error{
-                        display: none;
-                        color: $error-color;
-                        background-color: $body-bg;
-                        padding: 0.1rem;
-                        margin-top: 0.1rem;
-                        width: 100%;
-                        border: 2px solid $error-color;
-                        text-align: center;
-                        font-size: 0.7rem;
-                    }
-
-
                     .title-plus, .title-minus{
                         cursor: pointer;
                     }
 
                     .title-minus{
                         display: none;
+                    }
+
+                    .name_input, .last_name_input, .birthdate_input, .email_input{
+
+                        .form-error{
+                            display: none;
+                            color: $error-color;
+                            background-color: $body-bg;
+                            padding: 0.1rem;
+                            margin-top: 0.1rem;
+                            width: 100%;
+                            border: 2px solid $error-color;
+                            text-align: center;
+                            font-size: 0.7rem;
+                        }
+
+                        .form-error.show{
+                            display: block;
+                        }
                     }
 
                     // Names input
@@ -126,13 +132,6 @@ main{
                     .birthdate_input{
                         margin-bottom: 1.5rem !important;
                         border-bottom: 1px solid $body-bg;
-                        display: flex;
-                        align-items: center;
-
-                        .birthdate_title{
-                            margin-right: 1rem;
-                            font-size: 1rem;
-                        }
 
                         #birthdate{
                             background-color: rgba(39,47,51, 0);
