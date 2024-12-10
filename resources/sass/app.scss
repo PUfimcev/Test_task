@@ -1,25 +1,24 @@
-// Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
+
+// Variables
+@import './variables';
+
 // components
 
-@import 'main';
-@import 'main_media';
-@import 'footer';
-@import 'footer_media';
-@import 'header_media';
-@import 'notification';
+@import './main';
+@import './main_media';
+@import './footer';
+@import './footer_media';
+@import './header_media';
+@import './notification';
+
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-
