@@ -30,6 +30,11 @@ return [
 
     'disks' => [
 
+        'addFiles' => [
+            'driver' => 'local',
+            'root' => resource_path('images'),
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),
@@ -72,6 +77,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        // public_path('images') => resource_path('images'),
     ],
 
 ];

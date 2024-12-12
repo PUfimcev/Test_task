@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MainController extends Controller
 {
@@ -13,6 +14,20 @@ class MainController extends Controller
      */
     public function index(): View
     {
+        if(!Storage::disk('public')->exists('images')) {
+            Storage::disk('public')->makeDirectory('images', 0775, true);
+        }
+
+        $files = Storage::disk('addFiles')->files();
+
+
+        foreach($files as $file){
+
+            if(!Storage::disk('public')->exists('images/'.$file)) {
+
+                Storage::disk('public')->put('images/'.$file, Storage::disk('addFiles')->get($file));
+            }
+        }
 
         return view('main');
 
