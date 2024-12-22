@@ -1,27 +1,37 @@
 
 Для установки проекта необходимо выполнить следующие шаги:
-1. Настроить локальный сервер и БД MySQL.
 
-2. Создать нужную папку, запустить команду  git init, залить в нее проект с GitHub через команду git pull.
+1. Установить  Docker и DockerHub.
 
-3. Переименовать в проекте env.example в .env.
+2. Создать нужную папку, открыть ее в терминале.
 
-4. Выполнить команды в папке проекта: 
-- Run composer install или composer install
-- Run php artisan key:generate или php artisan key:generate
-- npm run i. 
+Далее все команды осуществляются в терминале!
 
-5. Создать базу данных MySQL и настроить доступ к ней.
+3. Запустить команду  git init, клонировать в нее проект с GitHub через команду git clone https://github.com/PUfimcev/Test_task.git my_test
 
-6. Открыть файл .env в корне проекта Laravel и настроить следующие параметры:
+4. Перейти в папку my_testl через команду  cd my_test
+
+5. В папке my_test выпонить команду composer install
+
+6. Скопировать файл env.example в env через команду cp .env.example в .env
+
+7. Осуществить сборку контейнера Docker-compose через команду sail up -d
+
+8. Сгенерировать уникальный ключ проект через команду sail artisan key:generate 
+
+9. Cоздать символическую ссылку через команду sail artisan storage:link
+
+10. Установить пакетный менеджер Node через sail npm install && pm run build
+
+11. Открыть файл .env в корне проекта Laravel и настроить следующие параметры:
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=mysql
 DB_PORT=3306
-DB_DATABASE=имя_базы_данных
-DB_USERNAME=имя_пользователя_базы_данных
-DB_PASSWORD=пароль_пользователя_базы_данных
+DB_DATABASE=test_task
+DB_USERNAME=sail
+DB_PASSWORD=password
 
-7. Создать таблицы в базе данных, используя команду "php artisan migrate".
+12. Создать таблицы в базе данных, используя команду sail artisan migrate
 
-8. Запустить проект на локальном сервере командой "npm run dev".
+13. Запустить проект на локальном сервере командой sail npm run dev.
 
